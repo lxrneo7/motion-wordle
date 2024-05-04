@@ -1,19 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useMemo, useReducer } from 'react';
+import { render } from 'react-dom';
+import { WordleGrid } from './components/Grid/grid';
+import { WordleKeyboard } from './components/Keyboard/keyboard';
+import { WordleToolbar } from './components/Toolbar/toolbar';
+import { getRandomWord } from './models/dictionary';
+import { wordleStateReducer } from './models/reducer';
+import { generateInitialState } from './models/state';
+import './App.css';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  const initialState = useMemo(
+    () => generateInitialState(getRandomWord(), 6),
+    []
+  );
+  const [{ word, values, gameOver, invalidLetters }, dispatch] = useReducer(
+    wordleStateReducer,
+    initialState
+  );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  return (
+    <div className="wordle-app">
+      <WordleToolbar />
+      <WordleGrid values={values} />
+      <WordleKeyboard
+        word={word}
+        dispatch={dispatch}
+        gameOver={gameOver}
+        invalidLetters={invalidLetters}
+      />
+    </div>
+  );
+};
+
+render(<App />, document.getElementById('root'));
