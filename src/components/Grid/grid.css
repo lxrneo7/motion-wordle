@@ -1,0 +1,35 @@
+.wordle-grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .wordle-grid__row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-basis: 1;
+  }
+  
+  .wordle-grid__slot {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid #686868;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wordle-grid__slot--valid {
+    background-color: rgba(0, 255, 0, 0.5);
+  }
+  
+  .wordle-grid__slot--invalid {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .wordle-grid__slot--invalid-slot {
+    background-color: rgb(255, 213, 1);
+  }
+  

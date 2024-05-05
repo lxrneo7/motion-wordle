@@ -1,0 +1,56 @@
+.wordle-keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    width: 100%;
+  }
+  
+  .wordle-keyboard__row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .wordle-keyboard__row__key {
+    flex: 0 10%;
+    cursor: pointer;
+  }
+  
+  .wordle-keyboard__row__key:disabled {
+    cursor: not-allowed;
+  }
+  
+  .wordle-keyboard__row__key--delete {
+    flex: 0 20%;
+    cursor: pointer;
+    background-color: #686868;
+    color: #fff;
+  }
+  
+  .wordle-keyboard__row__key--enter {
+    flex: 0 20%;
+    cursor: pointer;
+    background-color: rgb(19, 137, 253);
+    color: #fff;
+  }
+  
+  .wordle-keyboard__new-game {
+    flex: 0 25%;
+    width: 80%;
+    cursor: pointer;
+    background-color: rgb(19, 137, 253);
+    color: #fff;
+  }
+  
+  .wordle-keyboard__game-over {
+    margin: 0;
+  }
+  
+  .wordle-keyboard__word {
+    padding: 8px;
+  }
+  
