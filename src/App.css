@@ -51,6 +51,29 @@
   border-color: var(--dark-border);
 }
 
+
+
+
+
+
+
+
+
+.tile.green {
+  background-color: green;
+  color: white;
+}
+
+.tile.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.tile.grey {
+  background-color: grey;
+  color: white;
+}
+
 html {
   width: 100vw;
 }

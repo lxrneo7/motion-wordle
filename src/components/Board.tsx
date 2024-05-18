@@ -2,10 +2,11 @@ import React, { useRef } from "react";
 
 interface BoardProps {
   tiles: string[];
+  colors: string[];
   onTileChange: (index: number, value: string) => void;
 }
 
-const Board: React.FC<BoardProps> = ({ tiles, onTileChange }) => {
+const Board: React.FC<BoardProps> = ({ tiles, colors, onTileChange }) => {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleTileChange = (index: number, value: string) => {
@@ -46,7 +47,7 @@ const Board: React.FC<BoardProps> = ({ tiles, onTileChange }) => {
         <input
           ref={(el) => (inputRefs.current[index] = el)}
           key={index}
-          className="tile"
+          className={`tile ${colors[index]}`}
           type="text"
           maxLength={1}
           value={letter}
