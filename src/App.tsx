@@ -21,6 +21,7 @@ const App: React.FC = () => {
       updateColors(word, start);
     }
   };
+  //
 
   const updateColors = (word: string, start: number) => {
     const newColors = [...colors];
