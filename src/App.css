@@ -11,6 +11,7 @@
   flex-direction: column;
 }
 
+
 .header {
   border-bottom: 1px solid #d3d6da;
   height: 50px;
@@ -51,14 +52,6 @@
   border-color: var(--dark-border);
 }
 
-
-
-
-
-
-
-
-
 .tile.green {
   background-color: green;
   color: white;
@@ -77,3 +70,59 @@
 html {
   width: 100vw;
 }
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.key {
+  padding: 1em;
+  margin: 0.2em;
+  border: none;
+  background-color: #d3d6da;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.wide-key {
+  padding: 1em 2em;
+}
+
+.key:active {
+  background-color: black
+}
+
+
+
+.win-message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+  ;
+}
+
+
+.win-message, .lose-message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.win-message {
+  color: green;
+}
+
+.lose-message {
+  color: red;
+}
+
