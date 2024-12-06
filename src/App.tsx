@@ -104,6 +104,7 @@ const App: React.FC = () => {
   };
 
   return (
+    
     <div className="App">
       <Header />
       <Board tiles={tiles} colors={colors} onTileChange={handleTileChange} />
